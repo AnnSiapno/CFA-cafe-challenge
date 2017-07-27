@@ -316,6 +316,8 @@ def place_order(item)
   puts "How many?"
   print ">"
   quantity = gets.chomp
+  puts "Please enter special requirements: "
+  requirements = gets.chomp
   @orderitems << item.name
   @itemquantity << quantity
   @unitprice << item.price
@@ -373,6 +375,7 @@ def payment()
   when "Cash"
       puts "Thank you, have a great day!"
     when "Card"
+      puts "There will be a 1.5% surcharge, your new total is #{@total * 1.015}"
       puts "Please enter a pin"
       print "> "
       pin = gets.chomp
